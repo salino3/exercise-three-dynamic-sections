@@ -1,0 +1,16 @@
+$dark: black;
+$defaultText: gray;
+$btn_primary_color: blue;
+
+
+
+body {
+    background: $dark;
+    color: $defaultText;
+}
+
+:export {
+  dark: $dark;
+  defaultText: $defaultText;
+  btn_primary_color: $btn_primary_color;
+}
