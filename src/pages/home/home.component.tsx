@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Body } from './components';
+import './home.styles.scss';
 
 export const Home: React.FC = () => {
-    
+
   return (
-    <div>home.component</div>
+    <div className='rootHome'>
+     <Body />
+    </div>
   )
 }
