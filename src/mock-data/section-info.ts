@@ -1,4 +1,5 @@
 export interface Vehicle {
+  types: string[];
   car: Component;
   moto: Component;
   bicyle: Component;
@@ -22,6 +23,11 @@ export interface Brand {
 
 
 export const vehicles: Vehicle = {
+  types: [
+    'Cars',
+    'Motos',
+    'Bicyles'
+  ],
   car: {
     types: [
       "Brecks",

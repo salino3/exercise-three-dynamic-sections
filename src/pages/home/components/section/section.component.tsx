@@ -1,7 +1,10 @@
 import React from "react";
+import { vehicles } from "@/mock-data/section-info";
+import { VehiclesCard } from "../vehicles-card";
 import "./section.styles.scss";
 
 export const Section: React.FC = () => {
+    
   return (
     <section className="root">
       <div className="container">
@@ -13,9 +16,12 @@ export const Section: React.FC = () => {
           <div className="contentBox1">
             <div className="contentBox1ListBox">
               <ul>
-                <li>Cars</li>
-                <li>Moto</li>
-                <li>Bicycle</li>
+        {
+          vehicles && vehicles.types.map((type: string) => (
+            <VehiclesCard 
+              type={type}
+             />
+        ))}
               </ul>
             </div>
             <hr />
