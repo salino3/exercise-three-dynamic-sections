@@ -56,6 +56,7 @@ export const Section: React.FC = () => {
                       key={index}
                       setBrand={setBrand}
                       type={item ? item : ""}
+                      brand={brand}
                     />
                   )
                 )}

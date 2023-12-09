@@ -23,7 +23,7 @@ export const VehiclesCard: React.FC<Props> = (props) => {
     <li className="liVehicles" onClick={() => handleClick(type)}>
       {type}
       {type.toLowerCase() == typeVehicle ? (
-        <div style={{ width: "25px", height: "25px" }}>
+        <div style={{ width: "20px", height: "20px" }}>
           <svg
             className="iconPc"
             xmlns="http://www.w3.org/2000/svg"

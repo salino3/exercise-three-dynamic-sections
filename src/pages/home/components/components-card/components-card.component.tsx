@@ -4,15 +4,17 @@ import './components-card.styles.scss';
 interface Props {
   type: string | undefined;
   setBrand: React.Dispatch<React.SetStateAction<string>>;
+  brand: string;
 };
 
 
 export const ComponentsCard: React.FC<Props> = (props) => {
-  const {type, setBrand} = props;
+  const { type, setBrand, brand} = props;
 
+  const processedType: string | undefined = type && type.replace(/\s/g, '').toLowerCase();
+ 
   const handleClick = (type: string | undefined) => {
 
-    
     switch (type) {
       case "Brakes":
         setBrand("brakes");
@@ -21,27 +23,60 @@ export const ComponentsCard: React.FC<Props> = (props) => {
         setBrand("engineModule");
         break;
       case "Wheels":
-        setBrand("wheel");
+        setBrand("wheels");
         break;
-      case "Suspencion Kit":
+      case "Suspension Kit":
         setBrand("suspensionKit");
         break;
-      case "Transimission System":
+      case "Transmission System":
         setBrand("transmissionSystem");
         break;
 
       default:
-        setBrand("brakes");
         break;
-     };
     };
+                
+};
 
   return (
-    <li onClick={() => handleClick(type)}>
-      {
-       type ? type : ''
-      }
+    <li 
+     className='liComponents'
+     onClick={() => handleClick(type)}>
+      {type ? type : ""}
+      {processedType == brand.toLowerCase() ? (
+        <div style={{ width: "20px", height: "20px" }}>
+          <svg
+            className="iconPc"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+          <svg
+            className="iconMobile"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            transform="rotate(90)"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      ) : (
+        ""
+      )}
     </li>
-  )
+  );
 }
 

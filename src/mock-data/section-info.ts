@@ -7,7 +7,7 @@ export interface Vehicle {
 
 export interface Component {
   types: string[];
-  wheel: Brand[];
+  wheels: Brand[];
   transmissionSystem: Brand[];
   suspensionKit: Brand[];
   brakes: Brand[];
@@ -29,8 +29,8 @@ export const vehicles: Vehicle = {
       "Brakes",
       "Engine Module",
       "Wheels",
-      "Suspencion Kit",
-      "Transimission System",
+      "Suspension Kit",
+      "Transmission System",
     ],
     brakes: [
       { url: "#", brand: "Brembo" },
@@ -46,7 +46,7 @@ export const vehicles: Vehicle = {
       { url: "#", brand: "TurboMax" },
       { url: "#", brand: "ForceDrive" },
     ],
-    wheel: [
+    wheels: [
       { url: "#", brand: "Pirelli" },
       { url: "#", brand: "Michelin" },
       { url: "#", brand: "Continental" },
@@ -72,8 +72,8 @@ export const vehicles: Vehicle = {
       "Brakes",
       "Engine Module",
       "Wheels",
-      "Suspencion Kit",
-      "Transimission System",
+      "Suspension Kit",
+      "Transmission System",
     ],
     brakes: [
       { url: "#", brand: "Brembo" },
@@ -88,7 +88,7 @@ export const vehicles: Vehicle = {
       { url: "#", brand: "Velocity Motors" },
       { url: "#", brand: "TurboMax" },
     ],
-    wheel: [
+    wheels: [
       { url: "#", brand: "Pirelli" },
       { url: "#", brand: "Michelin" },
       { url: "#", brand: "Continental" },
@@ -111,12 +111,7 @@ export const vehicles: Vehicle = {
     ],
   },
   bicycle: {
-    types: [
-      "Brakes",
-      "Wheels",
-      "Suspencion Kit",
-      "Transimission System",
-    ],
+    types: ["Brakes", "Wheels", "Suspension Kit", "Transmission System"],
     brakes: [
       { url: "#", brand: "Brembo" },
       { url: "#", brand: "EBC Brakes" },
@@ -124,7 +119,7 @@ export const vehicles: Vehicle = {
       { url: "#", brand: "Bosch" },
       { url: "#", brand: "Wilwood" },
     ],
-    wheel: [
+    wheels: [
       { url: "#", brand: "Pirelli" },
       { url: "#", brand: "Michelin" },
       { url: "#", brand: "Continental" },
