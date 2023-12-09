@@ -1,10 +1,16 @@
 import React from "react";
 import { vehicles } from "@/mock-data/section-info";
 import { VehiclesCard } from "../vehicles-card";
+import { ComponentsCard } from "../components-card";
 import "./section.styles.scss";
+import { BrandCard } from "../brand-card";
 
 export const Section: React.FC = () => {
-    
+
+  const [typeVehicle, setTypeVehicle] = React.useState<string>('');
+  const [brand, setBrand] = React.useState<string>('')
+
+
   return (
     <section className="root">
       <div className="container">
@@ -16,12 +22,15 @@ export const Section: React.FC = () => {
           <div className="contentBox1">
             <div className="contentBox1ListBox">
               <ul>
-        {
-          vehicles && vehicles.types.map((type: string) => (
-            <VehiclesCard 
-              type={type}
-             />
-        ))}
+                {vehicles &&
+                  vehicles.types.map((type: string, index: number) => (
+                    <VehiclesCard
+                      setTypeVehicle={setTypeVehicle}
+                      setBrand={setBrand}
+                      key={index}
+                      type={type}
+                    />
+                  ))}
               </ul>
             </div>
             <hr />
@@ -38,32 +47,34 @@ export const Section: React.FC = () => {
         <div className="box box2">
           <div className="contentBox2">
             <ul>
-              <li>Element 1</li>
-              <li>Element 2</li>
-              <li>Element 3</li>
-              <li>Element 4</li>
-              <li>Element 5</li>
+              {vehicles &&
+                // @ts-ignore
+                vehicles[typeVehicle ? typeVehicle : "car"].types.map(
+                  (item: string, index: number) => (
+                    <ComponentsCard
+                      key={index}
+                      setBrand={setBrand}
+                      type={item ? item : ""}
+                    />
+                  )
+                )}
             </ul>
           </div>
         </div>
         <div className="box box3">
           <div className="contentBox3">
             <ul>
-              <li>
-                <a href="#">Element 1</a>
-              </li>
-              <li>
-                <a href="#">Element 2</a>
-              </li>
-              <li>
-                <a href="#">Element 3</a>
-              </li>
-              <li>
-                <a href="#">Element 4</a>
-              </li>
-              <li>
-                <a href="#">Element 5</a>
-              </li>
+              {vehicles &&
+                // @ts-ignore
+                vehicles[typeVehicle ? typeVehicle : "car"][
+                  brand ? brand : "brakes"
+                ].map((item: { url: string; brand: string }, index: number) => (
+                  <BrandCard
+                    key={index}
+                    url={item?.url}
+                    brand={item?.brand ? item?.brand : ""}
+                  />
+                ))}
             </ul>
           </div>
         </div>
