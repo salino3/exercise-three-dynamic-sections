@@ -2,8 +2,8 @@ import React from "react";
 import { vehicles } from "@/mock-data/section-info";
 import { VehiclesCard } from "../vehicles-card";
 import { ComponentsCard } from "../components-card";
-import "./section.styles.scss";
 import { BrandCard } from "../brand-card";
+import "./section.styles.scss";
 
 export const Section: React.FC = () => {
 
@@ -25,6 +25,7 @@ export const Section: React.FC = () => {
                 {vehicles &&
                   vehicles.types.map((type: string, index: number) => (
                     <VehiclesCard
+                      typeVehicle={typeVehicle}
                       setTypeVehicle={setTypeVehicle}
                       setBrand={setBrand}
                       key={index}

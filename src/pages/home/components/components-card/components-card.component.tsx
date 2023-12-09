@@ -4,7 +4,7 @@ import './components-card.styles.scss';
 interface Props {
   type: string | undefined;
   setBrand: React.Dispatch<React.SetStateAction<string>>;
-}
+};
 
 
 export const ComponentsCard: React.FC<Props> = (props) => {
@@ -33,8 +33,8 @@ export const ComponentsCard: React.FC<Props> = (props) => {
       default:
         setBrand("brakes");
         break;
-    }
-    }
+     };
+    };
 
   return (
     <li onClick={() => handleClick(type)}>

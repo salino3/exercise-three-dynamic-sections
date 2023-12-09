@@ -1,8 +1,31 @@
 
-li {
-     font-size: 20px;
+.liVehicles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 100px;
+    font-size: 20px;
+   
 }
 
-li:hover {
+.liVehicles:hover {
     color: rgb(252, 223, 223);
+}
+
+.iconMobile {
+        display: none;
+    }
+
+@media (max-width: 725px) {
+    .iconPc {
+        display: none;
+    }
+}
+
+
+@media (max-width: 725px) {
+    .iconMobile {
+        display: unset;
+    }
 }

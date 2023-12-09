@@ -6,20 +6,55 @@ interface Props {
   type: string;
   setTypeVehicle: React.Dispatch<React.SetStateAction<string>>;
   setBrand: React.Dispatch<React.SetStateAction<string>>;
+  typeVehicle: string;
 };
 
-export const VehiclesCard: React.FC<Props> = ({ type, setTypeVehicle, setBrand }) => {
+export const VehiclesCard: React.FC<Props> = (props) => {
+  const { type, setTypeVehicle, setBrand, typeVehicle } = props;
 
   const handleClick = (type: string) => {
 
     setBrand('brakes')
     setTypeVehicle(type.toLowerCase());
-  }
+  };
 
 
   return (
-     <li onClick={() => handleClick(type)}>
+    <li className="liVehicles" onClick={() => handleClick(type)}>
       {type}
-     </li>
-     );
+      {type.toLowerCase() == typeVehicle ? (
+        <div style={{ width: "25px", height: "25px" }}>
+          <svg
+            className="iconPc"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+          <svg
+            className="iconMobile"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            transform="rotate(90)"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      ) : (
+        ""
+      )}
+    </li>
+  );
 };
