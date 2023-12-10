@@ -19,7 +19,7 @@ export const Body: React.FC = () => {
       <div>
         <Link to={SwitchRouter.home}>Go back</Link>
         <h3>
-          <span className="titlePageBrand">Brand</span>
+          <span className="titlePage">Brand</span>
           <span className="twoPoints">:&nbsp;</span> <span>{params.brand}</span>
         </h3>
       </div>
