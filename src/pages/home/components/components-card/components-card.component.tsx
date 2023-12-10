@@ -3,13 +3,13 @@ import './components-card.styles.scss';
 
 interface Props {
   type: string | undefined;
-  setBrand: React.Dispatch<React.SetStateAction<string>>;
-  brand: string;
+  setComponent: React.Dispatch<React.SetStateAction<string>>;
+  component: string;
 };
 
 
 export const ComponentsCard: React.FC<Props> = (props) => {
-  const { type, setBrand, brand} = props;
+  const { type, setComponent, component } = props;
 
   const processedType: string | undefined = type && type.replace(/\s/g, '').toLowerCase();
  
@@ -17,19 +17,19 @@ export const ComponentsCard: React.FC<Props> = (props) => {
 
     switch (type) {
       case "Brakes":
-        setBrand("brakes");
+        setComponent("brakes");
         break;
       case "Engine Module":
-        setBrand("engineModule");
+        setComponent("engineModule");
         break;
       case "Wheels":
-        setBrand("wheels");
+        setComponent("wheels");
         break;
       case "Suspension Kit":
-        setBrand("suspensionKit");
+        setComponent("suspensionKit");
         break;
       case "Transmission System":
-        setBrand("transmissionSystem");
+        setComponent("transmissionSystem");
         break;
 
       default:
@@ -43,7 +43,7 @@ export const ComponentsCard: React.FC<Props> = (props) => {
      className='liComponents'
      onClick={() => handleClick(type)}>
       {type ? type : ""}
-      {processedType == brand.toLowerCase() ? (
+      {processedType == component.toLowerCase() ? (
         <div style={{ width: "20px", height: "20px" }}>
           <svg
             className="iconPc"

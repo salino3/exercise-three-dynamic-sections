@@ -8,7 +8,7 @@ import "./section.styles.scss";
 export const Section: React.FC = () => {
 
   const [typeVehicle, setTypeVehicle] = React.useState<string>('car');
-  const [brand, setBrand] = React.useState<string>('brakes')
+  const [component, setComponent] = React.useState<string>('brakes')
 
 
   return (
@@ -27,7 +27,7 @@ export const Section: React.FC = () => {
                     <VehiclesCard
                       typeVehicle={typeVehicle}
                       setTypeVehicle={setTypeVehicle}
-                      setBrand={setBrand}
+                      setBrand={setComponent}
                       key={index}
                       type={type}
                     />
@@ -54,9 +54,9 @@ export const Section: React.FC = () => {
                   (item: string, index: number) => (
                     <ComponentsCard
                       key={index}
-                      setBrand={setBrand}
+                      setComponent={setComponent}
                       type={item ? item : ""}
-                      brand={brand}
+                      component={component}
                     />
                   )
                 )}
@@ -68,9 +68,8 @@ export const Section: React.FC = () => {
             <ul>
               {vehicles &&
                 // @ts-ignore
-                vehicles[typeVehicle ? typeVehicle : "car"][
-                  brand ? brand : "brakes"
-                ].map((item: { url: string; brand: string }, index: number) => (
+                vehicles[typeVehicle ? typeVehicle : "car"]
+                 [component ? component : "brakes"].map((item: { url: string; brand: string }, index: number) => (
                   <BrandCard
                     key={index}
                     url={item?.url}
