@@ -7,8 +7,8 @@ import "./section.styles.scss";
 
 export const Section: React.FC = () => {
 
-  const [typeVehicle, setTypeVehicle] = React.useState<string>('');
-  const [brand, setBrand] = React.useState<string>('')
+  const [typeVehicle, setTypeVehicle] = React.useState<string>('car');
+  const [brand, setBrand] = React.useState<string>('brakes')
 
 
   return (

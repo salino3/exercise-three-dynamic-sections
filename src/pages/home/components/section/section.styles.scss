@@ -1,10 +1,15 @@
 
+.root {
+    padding: 15px;
+}
 
 .container {
     display: flex;
     flex-direction: row;
-    padding: 18px;
-    
+    box-shadow: 7px 9px 23px -9px rgba(255,255,255,0.75);
+    -webkit-box-shadow: 7px 9px 23px -9px rgba(255,255,255,0.75);
+    -moz-box-shadow: 7px 9px 23px -9px rgba(255,255,255,0.75);
+ 
     .box {
         border: solid;
         height: 250px;
@@ -116,7 +121,7 @@
                 justify-content: center;
                 align-items: flex-start; 
                 gap: 20px; 
-                width: 100%;
+                width: calc(100% - 10px);
                 box-sizing: border-box;
 
                 li:hover {
@@ -163,3 +168,5 @@
     flex-direction: column;
  }
 }
+
+

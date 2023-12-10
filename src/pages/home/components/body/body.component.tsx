@@ -6,6 +6,7 @@ export const Body: React.FC = () => {
 
   return (
     <div className='root'>
+      <h1>Spare Shop</h1>
         <Section />
     </div>
   )

@@ -9,6 +9,7 @@ interface Props {
 export const BrandCard: React.FC<Props> = (props) => {
   const {url, brand} = props;
 
+  console.log("New Routh", brand)
 
   return (
     <li>

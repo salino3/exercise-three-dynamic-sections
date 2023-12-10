@@ -8,11 +8,17 @@
     min-width: 100px;
     font-size: 20px; 
     box-sizing: border-box;
-    padding-right: 10px;
+    padding: 0px 2px;
+    // padding-right: 10px;
+
 }
 
 .liComponents:hover {
     color: rgb(252, 223, 223);
+    border: solid #D0C88E 1px;
+    height: 21.5px;
+    font-size: 20px;
+
 }
 
 .iconMobile {
