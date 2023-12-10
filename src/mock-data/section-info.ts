@@ -93,7 +93,7 @@ export const vehicles: Vehicle = {
     wheels: [
       { url: "", brand: "Pirelli" },
       { url: "", brand: "Michelin" },
-      { url: "", brand: "Continental" },
+      { url: "https://www.continental-neumaticos.es/", brand: "Continental" },
       { url: "", brand: "Bridgestone" },
       { url: "", brand: "Goodyear" },
     ],
