@@ -1,19 +1,22 @@
 import React from 'react';
+import { SwitchRouter } from '@/router';
 import './brand-card.styles.scss';
 
 interface Props {
   url: string;
   brand: string;
+  typeVehicle: string;
+  component: string;
 };
 
 export const BrandCard: React.FC<Props> = (props) => {
-  const {url, brand} = props;
+  const {url, brand, typeVehicle, component} = props;
 
-  console.log("New Routh", brand)
 
   return (
-    <li>
-      <a href={url}>{brand ? brand : ""}</a>
+    <li className='liBrand'>
+      <a href={ url ? url : `${SwitchRouter.componentPage}/${typeVehicle}/${component}/${brand}`}>{brand ? brand : ""}</a>
+        <small>{url ? 'external link' : ''}</small>
     </li>
   );
 }

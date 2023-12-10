@@ -71,6 +71,8 @@ export const Section: React.FC = () => {
                 vehicles[typeVehicle ? typeVehicle : "car"]
                  [component ? component : "brakes"].map((item: { url: string; brand: string }, index: number) => (
                   <BrandCard
+                    typeVehicle={typeVehicle}
+                    component={component}
                     key={index}
                     url={item?.url}
                     brand={item?.brand ? item?.brand : ""}

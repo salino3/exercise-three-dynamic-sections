@@ -1,8 +1,20 @@
 
-li {
+.liBrand {
      font-size: 20px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     width: 100%;
+     box-sizing: border-box;
+     padding-right: 5px;
+
+     small {
+        font-size: small;
+     }
+
 }
 
-li:hover {
+.liBrand:hover {
     color: rgb(252, 223, 223);
 }
