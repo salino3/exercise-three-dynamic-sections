@@ -15,7 +15,7 @@ export const BrandCard: React.FC<Props> = (props) => {
 
   return (
     <li className='liBrand'>
-      <a href={ url ? url : `${SwitchRouter.componentPage}/${typeVehicle}/${component}/${brand}`}>{brand ? brand : ""}</a>
+      <a target={url ? "_blank" : ""} href={ url ? url : `${SwitchRouter.componentPage}/${typeVehicle}/${component}/${brand}`}>{brand ? brand : ""}</a>
         <small>{url ? 'external link' : ''}</small>
     </li>
   );
