@@ -4,7 +4,7 @@ import sass from "sass";
 import path from "path";
 
 export default defineConfig({
-  base: '/',
+  base: "/exercise-three-dynamic-sections",
   plugins: [react()],
   css: {
     preprocessorOptions: {
