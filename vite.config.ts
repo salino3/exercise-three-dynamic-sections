@@ -4,6 +4,7 @@ import sass from "sass";
 import path from "path";
 
 export default defineConfig({
+  base: '/',
   plugins: [react()],
   css: {
     preprocessorOptions: {

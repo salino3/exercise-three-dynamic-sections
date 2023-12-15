@@ -4,6 +4,6 @@ interface Routes {
 };
 
 export const SwitchRouter: Routes = {
-    home: '/',
-    componentPage: '/component'
+  home: "/exercise-three-dynamic-sections",
+  componentPage: "/exercise-three-dynamic-sections/component",
 };
